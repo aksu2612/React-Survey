@@ -1,0 +1,59 @@
+{
+  "name": "react-kg",
+  "version": "0.1.0",
+  "private": true,
+  "homepage": "./Login",
+  "dependencies": {
+    "@react-navigation/native": "^5.8.10",
+    "@react-navigation/stack": "^5.12.8",
+    "@testing-library/jest-dom": "^5.11.6",
+    "@testing-library/react": "^11.2.2",
+    "@testing-library/user-event": "^12.5.0",
+    "axios": "^0.21.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "history": "^5.0.0",
+    "mdbreact": "^5.0.0",
+    "moment": "^2.29.1",
+    "react": "^17.0.1",
+    "react-alert": "^7.0.2",
+    "react-alert-template-basic": "^1.0.0",
+    "react-dom": "^17.0.1",
+    "react-enhanced-numeric-input": "^1.2.2",
+    "react-icons": "^4.1.0",
+    "react-input-number": "^5.0.19",
+    "react-moment": "^1.0.0",
+    "react-router": "^5.2.0",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "4.0.1",
+    "react-simple-timefield": "^3.2.3",
+    "react-time-picker": "^4.1.1",
+    "react-transition-group": "^4.4.1",
+    "rsuite": "^4.8.5",
+    "web-vitals": "^0.2.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
