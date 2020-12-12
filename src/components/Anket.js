@@ -48,7 +48,6 @@ handleBolgeCLick(){
         QuestionTypeID:this.state.QuestionTypeID,  
 
       }
-      
       const url= 'https://localhost:44377/api/'+this.state.QuestionTypeConst;
       let res = await axios.post(url , params  ,
       {
@@ -60,7 +59,7 @@ handleBolgeCLick(){
           "Access-Control-Allow-Origin":'*'
         }
       });
-      alert("Anket Sorusu ile Kaydedildi");
+      alert("Anket Sorusu Kaydedildi");
       console.log(res);  
       }
       catch(e)
@@ -69,8 +68,6 @@ handleBolgeCLick(){
       } 
     
     }
-
-    
   handleSurveyType(props){
 
   this.setState({

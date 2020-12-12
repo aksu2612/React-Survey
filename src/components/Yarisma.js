@@ -56,7 +56,7 @@ class Yarisma extends Component {
        "Access-Control-Allow-Origin":'*'
      }
    });
-   alert("Sınav Sorusu ile Kaydedildi");
+   alert("Sınav Sorusu Kaydedildi");
    console.log(res);  
    }
     catch(e)
@@ -192,7 +192,7 @@ render(){
             <input type="text" id="answer5" placeholder="E şıkkı" className="form-control"onChange={value => this.handlerE(value)}/>
           </div>
           <select className="browser-default custom-select custom-select-lg mb-3"  onChange={value => this.handleGroupClick(value)}>
-            <option defaultChecked>Grup / Bölge Seçin</option>
+            <option value={0}>Tüm Bölgeler</option>
          {this.props.FBolge.map((e)=>
    
          <option value={e.ID} key={e.ID}>{e.BolgeAd}</option>
