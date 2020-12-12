@@ -19,6 +19,8 @@ class Anket extends Component {
         SurveyID: 0,
         QuestionTypeConst:'' ,
         FBolge:[] , 
+        Image:'',
+        ImageFile:null,
       }
       this.questionType=this.questionType.bind(this);
       this.postData=this.postData.bind(this); 
@@ -42,25 +44,43 @@ handleBolgeCLick(){
   async  postData(){   
     try{
   
-    let params = {
-        QuestionText:this.state.QuestionText, 
-        SurveyID:this.state.SurveyID, 
-        QuestionTypeID:this.state.QuestionTypeID,  
+//    let params = {
+//        QuestionText:this.state.QuestionText, 
+//        SurveyID:this.state.SurveyID, 
+ //       QuestionTypeID:this.state.QuestionTypeID,  
+ //       Image:this.state.Image
 
+//      }
+    let params2={
+      Image:this.state.Image,
+       ImageFile:this.state.ImageFile
       }
-      const url= 'https://localhost:44377/api/'+this.state.QuestionTypeConst;
-      let res = await axios.post(url , params  ,
-      {
-        method:'POST',
-        url:url,
-        data:params,
-        headers:{
-          "Content-type":"application/json",
-          "Access-Control-Allow-Origin":'*'
-        }
-      });
-      alert("Anket Sorusu Kaydedildi");
-      console.log(res);  
+ //     const url= 'https://localhost:44377/api/'+this.state.QuestionTypeConst;
+ //     let res = await axios.post(url , params  ,
+ //     {
+ //       method:'POST',
+ //       url:url,
+ //       data:params,
+ //       headers:{
+ //         "Content-type":"application/json",
+ //         "Access-Control-Allow-Origin":'*'
+ //       }
+ //     });
+  //    alert("Anket Sorusu Kaydedildi");
+ //     console.log(res);  
+      const url2= 'https://localhost:44377/api/QuestionTypeImage/uploadfile';
+      const formData=new FormData();
+      formData.append(this.state.Image,this.ImageFile);
+      let res2 = await axios.post(url2 , formData  ,
+        {
+          method:'POST', 
+          url:url2, 
+          data:formData,
+          headers:{
+            "Content-type":"multipart/form-data",
+            "Access-Control-Allow-Origin":'*'
+          }
+        });
       }
       catch(e)
       {
@@ -119,6 +139,13 @@ handleBolgeCLick(){
     console.log(this.state.QuestionTypeID);
     console.log( props.target.value)
   }  
+  anketResim=(props)=>{
+      this.setState({
+        Image:props.name,
+        ImageFile:props,
+      })
+    console.log(props);
+  }
  
 render(){
   return (
@@ -160,7 +187,7 @@ render(){
               <AnketSoruTur3 />
           )}
                { this.state.currentView == 'AnketSoruTur4' && (
-              <AnketSoruTur4 />
+              <AnketSoruTur4 parentCallBack={this.anketResim}/>
           )}
          
  

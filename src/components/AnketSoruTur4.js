@@ -4,26 +4,37 @@ export class AnketSoruTur4 extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            file: null
+            file: null,
+            Image:''
           }
-          this.handleChange = this.handleChange.bind(this)
+          this.onImageChange = this.onImageChange.bind(this)
     }
-    handleChange(event) {
+ 
+    onImageChange = event => {
+      if (event.target.files && event.target.files[0]) {
+        let img = event.target.files[0];
         this.setState({
-          file: URL.createObjectURL(event.target.files[0])
-        })
-      }
-      render() {
+          file: URL.createObjectURL(img),
+          Image:event.target.files[0].name
+        });
+        this.props.parentCallBack(event.target.files[0]);
+      } 
+    };
+      render() { 
         return (
-          <div>
-            
-            <br/>
-            <input type="file" onChange={this.handleChange}/>
-         
-            <img src={this.state.file}/>
-            <br/>
-            <br/>
-          </div>
+          <form 
+          method="post" 
+          enctype="multipart/form-data" 
+          action="https://localhost:44377/api/QuestionTypeImage/uploadfile"
+        >
+            <div>
+                <label for="img">Image File</label>
+                <input name="img" type="file" />
+            </div>
+            <div>
+                <input type="submit" value="Submit" />
+            </div>
+        </form>
         );
       }
 }
