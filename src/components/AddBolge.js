@@ -1,8 +1,5 @@
 import React, { Component} from 'react'; 
-import axios from 'axios';
-import NumericInput from 'react-enhanced-numeric-input';  
-import TimeField from 'react-simple-timefield';
-import moment from 'moment';
+import axios from 'axios'; 
 class AddBolge extends Component {
     constructor(props) {
         super(props);

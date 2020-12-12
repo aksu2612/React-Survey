@@ -1,7 +1,6 @@
 import React, { Component} from 'react'; 
 import axios from 'axios';
-import NumericInput from 'react-enhanced-numeric-input';  
-import TimeField from 'react-simple-timefield';
+import NumericInput from 'react-enhanced-numeric-input';   
 import moment from 'moment';
 class AddSinav extends Component {
     constructor(props) {

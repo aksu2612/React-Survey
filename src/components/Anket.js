@@ -1,6 +1,5 @@
 import React ,{Component}  from "react";  
-import axios from 'axios';
-
+import axios from 'axios'; 
 import AnketSoruTur0 from './AnketSoruTur0';
 import AnketSoruTur1 from './AnketSoruTur1';
 import AnketSoruTur2 from './AnketSoruTur2';
