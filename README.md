@@ -7,6 +7,7 @@
 
 **Giriş yapılabilmesi için 
 --Database klasöründeki BackUp dosyasını restore etmeniz gerekmektedir.
+--Daha sonra React-Survey-Api uygulamasını başlatıp React uygulamasındaki endpoint tanımlı değişkenlerde değişiklik yapın 
 
  
  
