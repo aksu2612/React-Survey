@@ -43,43 +43,27 @@ handleBolgeCLick(){
   async  postData(){   
     try{
   
-//    let params = {
-//        QuestionText:this.state.QuestionText, 
-//        SurveyID:this.state.SurveyID, 
- //       QuestionTypeID:this.state.QuestionTypeID,  
- //       Image:this.state.Image
+     let params = {
+         QuestionText:this.state.QuestionText, 
+         SurveyID:this.state.SurveyID, 
+       QuestionTypeID:this.state.QuestionTypeID,  
+         Image:this.state.Image
 
-//      }
-    let params2={
-      Image:this.state.Image,
-       ImageFile:this.state.ImageFile
-      }
- //     const url= 'https://localhost:44377/api/'+this.state.QuestionTypeConst;
- //     let res = await axios.post(url , params  ,
- //     {
- //       method:'POST',
- //       url:url,
- //       data:params,
- //       headers:{
- //         "Content-type":"application/json",
- //         "Access-Control-Allow-Origin":'*'
- //       }
- //     });
-  //    alert("Anket Sorusu Kaydedildi");
- //     console.log(res);  
-      const url2= 'https://localhost:44377/api/QuestionTypeImage/uploadfile';
-      const formData=new FormData();
-      formData.append(this.state.Image,this.ImageFile);
-      let res2 = await axios.post(url2 , formData  ,
-        {
-          method:'POST', 
-          url:url2, 
-          data:formData,
-          headers:{
-            "Content-type":"multipart/form-data",
-            "Access-Control-Allow-Origin":'*'
-          }
-        });
+       } 
+     const url= 'https://localhost:44377/api/'+this.state.QuestionTypeConst;
+     let res = await axios.post(url , params  ,
+      {
+        method:'POST',
+        url:url,
+        data:params,
+      headers:{
+          "Content-type":"application/json",
+          "Access-Control-Allow-Origin":'*'
+        }
+      });
+      alert("Anket Sorusu Kaydedildi");
+      console.log(res);  
+     
       }
       catch(e)
       {

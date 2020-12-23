@@ -15,11 +15,8 @@ import axios  from 'axios';
       }
     } 
     this.loginHandler = this.loginHandler.bind(this);
-  } 
-  
-  
-      loginHandler(props) {
-   // GET request using fetch with error handling 
+  }  
+      loginHandler(props) { 
      const url='https://localhost:44377/api/Admins'; 
       axios.get(url)
       .then(response=> { props.dizi= response.data;}) 
@@ -35,23 +32,10 @@ import axios  from 'axios';
         })
         }
         else{ 
-          alert("Bilgilerinizi Kontrol Ediniz !!!");
-        //  alert("Giriş Bilgilerinizi Kontrol Ediniz"); 
-                 /*navigate to HomePage*/
+          alert("Bilgilerinizi Kontrol Ediniz !!!"); 
         } 
-      }  ) 
-/*
-           fetch(url  ,payload )
-           .then(res=>res.json())
-           .then(json=>{ 
-               console.log(json);
-          console.log(payload.Name);
-          console.log(payload.Location);
-           });
-     */
-   
-    }
- 
+      })   
+    } 
   render()
   {
     var {isAuthenticated,homes}=this.state;
